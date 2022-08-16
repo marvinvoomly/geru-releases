@@ -1,0 +1,13 @@
+{
+	"name": "GERU",
+	"author": "Etison LLC DBA GERU",
+	"version": "0.1.0",
+	"repository": {
+	"type" : "git",
+		"url" : "https://github.com/marvz73/geru-releases.git"
+	},
+	"scripts":{
+		"build": "electron-builder build --mac --win --publish never",
+		"deploy": "electron-builder build --mac --win --publish always"
+	}
+}
