@@ -1,7 +1,8 @@
 {
   "name": "GERU",
+  "description": "This is GERU Desktop Application",
   "author": "Etison LLC DBA GERU",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "homepage": "./",
   "main": "public/electron.js",
@@ -86,7 +87,7 @@
       "category": "public.app-category.utilities"
     },
     "win": {
-      "icon": "./public/icons/win/200x200.png"
+      "icon": "./public/icons/win/256x256.png"
     },
     "files": [
       "build/**/*",
