@@ -2,7 +2,7 @@
   "name": "GERU",
   "description": "This is GERU Desktop Application",
   "author": "Etison LLC DBA GERU",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "homepage": "./",
   "main": "main.js",
@@ -26,28 +26,7 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "build": {
-    "appId": "com.example.electron-cra",
-    "mac": {
-      "icon": "./public/icons/mac/icon.icns",
-      "category": "public.app-category.utilities"
-    },
-    "win": {
-      "icon": "./public/icons/win/256x256.png"
-    },
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    }
   }
+  
+  
 }

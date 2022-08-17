@@ -8,6 +8,6 @@ electron-builder.yml
 src/
 public/
 build/
-
+dist/
 
 .DS_Store
