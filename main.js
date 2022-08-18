@@ -16,6 +16,7 @@ function createWindow () {
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
+
   mainWindow.once('ready-to-show', () => {
     autoUpdater.checkForUpdatesAndNotify();
   });
@@ -50,12 +51,22 @@ autoUpdater.on('update-available', () => {
   mainWindow.webContents.send('update_available');
 });
 
-autoUpdater.on('update-downloaded main.js', () => {
-  console.log('update-downloaded')
+autoUpdater.on('update-downloaded', () => {
+  console.log('update-downloaded main.js')
   mainWindow.webContents.send('update_downloaded');
 });
 
 ipcMain.on('restart_app', () => {
-  console.log('restart_app main.js')
   autoUpdater.quitAndInstall();
+  console.log('restart_app main.js')
 });
+
+autoUpdater.on('download-progress', (progressObj) => {
+
+  let log_message = "Download speed: " + progressObj.bytesPerSecond;
+  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+      
+  console.log(log_message)
+
+})

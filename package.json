@@ -2,13 +2,13 @@
   "name": "GERU",
   "description": "This is GERU Desktop Application",
   "author": "Etison LLC DBA GERU",
-  "version": "0.1.4",
+  "version": "0.1.0",
   "private": true,
   "homepage": "./",
   "main": "main.js",
   "devDependencies": {
     "electron": "^14.0.0",
-    "electron-builder": "^20.44.4"
+    "electron-builder": "^22.10.5"
   },
   "dependencies": {
     "electron-is-dev": "^1.2.0",
@@ -23,10 +23,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/marvz73/geru-releases.git"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
-  
-  
 }
