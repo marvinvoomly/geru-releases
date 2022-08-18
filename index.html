@@ -37,7 +37,9 @@
       Restart
     </button>
   </div>
+
   <script>
+    
     const { ipcRenderer } = require('electron');
     const version = document.getElementById('version');
     const notification = document.getElementById('notification');
@@ -45,6 +47,7 @@
     const restartButton = document.getElementById('restart-button');
     
     ipcRenderer.send('app_version');
+
     ipcRenderer.on('app_version', (event, arg) => {
       ipcRenderer.removeAllListeners('app_version');
       version.innerText = 'Version ' + arg.version;
@@ -64,10 +67,12 @@
     });
 
     function closeNotification() {
+      console.log('closeNotification')
       notification.classList.add('hidden');
     }
     
     function restartApp() {
+      console.log('restartApp')
       ipcRenderer.send('restart_app');
     }
   </script>

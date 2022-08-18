@@ -2,7 +2,7 @@
   "name": "GERU",
   "description": "This is GERU Desktop Application",
   "author": "Etison LLC DBA GERU",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "homepage": "./",
   "main": "main.js",
