@@ -20,7 +20,7 @@
     "start": "electron .",
     "compile": "electron-webpack",
     "build": "electron-builder build --win --publish never",
-    "deploy": "electron-builder build --mac --publish always"
+    "deploy": "electron-builder build --win --mac --publish always"
   },
   "electronWebpack": {
     "commonSourceDirectory": "common",
