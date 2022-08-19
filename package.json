@@ -3,25 +3,57 @@
   "description": "This is GERU Desktop Application",
   "author": "Etison LLC DBA GERU",
   "version": "0.1.0",
-  "private": true,
   "homepage": "./",
-  "main": "main.js",
+  "main": "src/main.js",
   "devDependencies": {
     "electron": "^16.0.3",
-    "electron-builder": "^22.14.5"
+    "electron-builder": "^22.14.5",
+    "webpack": "^5.74.0"
   },
   "dependencies": {
     "electron-is-dev": "^1.2.0",
-    "electron-updater": "^5.2.1"
+    "electron-updater": "^5.2.1",
+    "electron-webpack": "^2.8.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "build": "electron-builder build --mac --publish never",
+    "compile": "electron-webpack",
+    "build": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --mac --publish always"
+  },
+  "electronWebpack": {
+    "commonSourceDirectory": "common",
+    "main": {
+      "sourceDirectory": "src/"
+    },
+    "renderer": {
+      "sourceDirectory": null
+    }
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/marvz73/geru-releases.git"
+  },
+  "build": {
+    "appId": "com.geru.app.ElectronAutoUpdate",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis",
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "deleteAppDataOnUninstall": true
+    },
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   }
 }
