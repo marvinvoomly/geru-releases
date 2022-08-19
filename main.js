@@ -42,9 +42,7 @@ app.on('activate', function () {
   }
 });
 
-ipcMain.on('app_version', (event) => {
-  event.sender.send('app_version', { version: app.getVersion() });
-});
+
 
 autoUpdater.on('update-available', () => {
   console.log('update-available main.js')
@@ -56,11 +54,6 @@ autoUpdater.on('update-downloaded', () => {
   mainWindow.webContents.send('update_downloaded');
 });
 
-ipcMain.on('restart_app', () => {
-  autoUpdater.quitAndInstall();
-  console.log('restart_app main.js')
-});
-
 autoUpdater.on('download-progress', (progressObj) => {
 
   let log_message = "Download speed: " + progressObj.bytesPerSecond;
@@ -69,4 +62,15 @@ autoUpdater.on('download-progress', (progressObj) => {
       
   console.log(log_message)
 
-})
+});
+
+
+ipcMain.on('app_version', (event) => {
+  event.sender.send('app_version', { version: app.getVersion() });
+});
+
+ipcMain.on('restart_app', () => {
+  autoUpdater.quitAndInstall();
+  console.log('restart_app main.js')
+});
+
