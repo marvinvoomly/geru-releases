@@ -2,7 +2,7 @@
   "name": "GERU",
   "description": "This is GERU Desktop Application",
   "author": "Etison LLC DBA GERU",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "homepage": "./",
   "main": "src/main.js",
   "devDependencies": {
@@ -19,7 +19,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "compile": "electron-webpack",
-    "build": "electron-builder build --win --publish never",
+    "build": "electron-builder build --mac --win --publish never",
     "deploy": "electron-builder build --win --mac --publish always"
   },
   "electronWebpack": {
@@ -48,9 +48,9 @@
       "deleteAppDataOnUninstall": true
     },
     "files": [
+      "src/**/*",
       "dist/**/*",
-      "package.json",
-      "node_modules/**/*"
+      "package.json"
     ],
     "directories": {
       "buildResources": "assets"
