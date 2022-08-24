@@ -5,8 +5,11 @@ yarn-error.log
 
 .env
 electron-builder.yml
-public/
+
 build/
 dist/
+
+public/
+src/
 
 .DS_Store
