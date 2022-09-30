@@ -63,23 +63,29 @@
     "electron-dev": "concurrently \"BROWSER=none npm run start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-pack": "build --em.main=build/electron.js",
     "preelectron-pack": "npm run build",
-    "build": "electron-builder build --mac --win --publish never",
+    
+    "build": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --win --mac --publish always"
   },
+
   "eslintConfig": {
     "extends": "react-app"
   },
+
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
   ],
+
   "repository": {
     "type": "git",
     "url": "https://github.com/marvinvoomly/geru-releases.git"
   },
+
   "afterSign": "scripts/notarize.js",
+
   "build": {
     "appId": "com.example.electron-cra",
     "mac": {
@@ -99,4 +105,6 @@
       "buildResources": "assets"
     }
   }
+
+
 }
